@@ -1,5 +1,4 @@
 // src/services/api.ts
-import axios from './axios';
 import axiosInstance from './axios';
 import { Book, CreateBook, UpdateBook, User } from '../types';
 
@@ -9,15 +8,17 @@ interface ApiResponse<T> {
 }
 
 export const authAPI = {
-    async login(credentials: User): Promise<string> {
-      try {
-        const response = await axiosInstance.post('/login', credentials);
-        return response.data;
-      } catch (error) {
-        console.error('Login error:', error);
-        throw error;
-      }
-    },
+  async login(credentials: User): Promise<string> {
+    try {
+      const response = await axiosInstance.post('/login', credentials);
+      const token = response.data.token;
+      localStorage.setItem('token', token);
+      return token;
+    } catch (error) {
+      console.error('Login error:', error);
+      throw error;
+    }
+  },
   
     async register(credentials: User): Promise<void> {
       try {
