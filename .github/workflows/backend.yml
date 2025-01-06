@@ -5,21 +5,18 @@ on:
     branches: [ "main" ]
     paths:
       - 'backend/**'
-    paths-ignore:
-      - "**/*.md"
-      - "CODEOWNERS"
-      - "Makefile"
+      - '!backend/**/*.md'  # Exclude .md files within 'backend'
+      - '!backend/CODEOWNERS'
+      - '!backend/Makefile'
   pull_request:
     branches: [ "main" ]
     paths:
       - 'backend/**'
-    paths-ignore:
-      - "**/*.md"
-      - "CODEOWNERS"
-      - "Makefile"
+      - '!backend/**/*.md'
+      - '!backend/CODEOWNERS'
+      - '!backend/Makefile'
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
     steps:
