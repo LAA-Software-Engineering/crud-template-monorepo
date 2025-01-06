@@ -1,0 +1,16 @@
+version: 2
+updates:
+  # Go modules monitoring
+  - package-ecosystem: "gomod"  # For Go modules
+    directory: "/backend"  # Location of `go.mod` and `go.sum`
+    schedule:
+      interval: "weekly"
+
+  # Yarn (Node/TypeScript) monitoring
+  - package-ecosystem: "npm"  # 'npm' works for both npm and Yarn projects
+    directory: "/frontend"  # Path to where your `package.json` and `yarn.lock` are located
+    schedule:
+      interval: "weekly"  # You can change to 'daily', 'weekly', or 'monthly'
+    labels:
+      - "dependencies"
+      - "yarn"
