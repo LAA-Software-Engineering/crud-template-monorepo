@@ -51,13 +51,20 @@ export const BooksPage: React.FC = () => {
         title: data.title,
         author: data.author,
       });
-      fetchBooks();
+  
+      setBooks((prevBooks) =>
+        prevBooks.map((book) =>
+          book.id === selectedBook.id ? { ...book, ...data } : book
+        )
+      );
+  
       setIsModalOpen(false);
       setSelectedBook(undefined);
     } catch (err) {
       setError('Failed to update book');
     }
   };
+  
 
   const handleDelete = async (id: number) => {
     if (window.confirm('Are you sure you want to delete this book?')) {

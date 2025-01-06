@@ -8,6 +8,7 @@ import {
   DialogActions,
   TextField,
   Button,
+  CircularProgress,
 } from '@mui/material';
 import { Book, CreateBook, UpdateBook } from '../../types';
 
@@ -31,21 +32,30 @@ export const BookModal: React.FC<BookModalProps> = ({
     },
   });
 
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [submitError, setSubmitError] = React.useState<string | null>(null);
+
   React.useEffect(() => {
     if (open) {
       reset({
         title: book?.title || '',
         author: book?.author || '',
       });
+      setSubmitError(null);
     }
   }, [open, book, reset]);
 
-  const handleFormSubmit = handleSubmit((data) => {
-    const submitData: CreateBook = {
-      title: data.title,
-      author: data.author,
-    };
-    onSubmit(submitData);
+  const handleFormSubmit = handleSubmit(async (data) => {
+    setIsSubmitting(true);
+    setSubmitError(null);
+    try {
+      await onSubmit(data);
+      onClose(); // Close modal on successful submission
+    } catch (err) {
+      setSubmitError('Failed to submit book. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   });
 
   return (
@@ -82,12 +92,22 @@ export const BookModal: React.FC<BookModalProps> = ({
                 />
               )}
             />
+            {submitError && (
+              <p style={{ color: 'red', marginTop: '8px' }}>{submitError}</p>
+            )}
           </div>
         </DialogContent>
         <DialogActions>
-          <Button onClick={onClose}>Cancel</Button>
-          <Button type="submit" variant="contained" color="primary">
-            {book ? 'Update' : 'Create'}
+          <Button onClick={onClose} disabled={isSubmitting}>
+            Cancel
+          </Button>
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? <CircularProgress size={24} /> : book ? 'Update' : 'Create'}
           </Button>
         </DialogActions>
       </form>
