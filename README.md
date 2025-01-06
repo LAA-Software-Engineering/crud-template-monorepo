@@ -1,6 +1,6 @@
 # CRUD Template Monorepo
 
-A full-stack application for managing books with authentication, featuring a Go backend API and React TypeScript frontend.
+A full-stack CRUD example application for managing books with authentication, featuring a Go backend API and React TypeScript frontend.
 
 ## Project Structure
 
@@ -52,8 +52,8 @@ book-management-system/
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
-cd book-management-system
+git clone https://github.com/LAA-Software-Engineering/crud-template-monorepo
+cd crud-template-monorepo
 ```
 
 2. Start the backend:
@@ -61,7 +61,7 @@ cd book-management-system
 ```bash
 cd backend
 make setup
-make build
+make build-docker
 make up
 ```
 
@@ -104,54 +104,6 @@ Access Swagger documentation at:
 
 ```
 http://localhost:8001/swagger/index.html
-```
-
-## Development
-
-### Backend Development
-
-```bash
-cd backend
-make dev
-```
-
-### Frontend Development
-
-```bash
-cd frontend
-npm start
-```
-
-## Testing
-
-### Backend Tests
-
-```bash
-cd backend
-make test
-```
-
-### Frontend Tests
-
-```bash
-cd frontend
-yarn test
-```
-
-## Deployment
-
-### Backend
-
-```bash
-cd backend
-make build
-```
-
-### Frontend
-
-```bash
-cd frontend
-yarn build
 ```
 
 ## Contributing
