@@ -1,0 +1,37 @@
+name: Frontend
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'frontend/**'
+      - '!backend/**/*.md'  # Exclude .md files within 'backend'
+      - '!backend/Makefile'
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'frontend/**'
+      - '!frontend/**/*.md'  # Exclude .md files within 'backend'
+      - '!frontend/Makefile'
+
+jobs:
+  build:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          
+      - name: Install dependencies
+        run: yarn install 
+        working-directory: ./frontend
+      
+      - name: Build production bundle
+        run: yarn build
+        working-directory: ./frontend
+        
