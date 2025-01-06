@@ -15,14 +15,30 @@ func Cors() gin.HandlerFunc {
 			"http://localhost",
 			"http://localhost:8001",
 			"http://127.0.0.1:3000",
-			"http://localhost:3000"},
-		AllowMethods: []string{"*"},
-		AllowHeaders: []string{"*"},
-		//ExposeHeaders:    []string{"Content-Length"},
+			"http://localhost:3000",
+		},
+		AllowMethods: []string{
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS",
+		},
+		AllowHeaders: []string{
+			"Origin",
+			"Content-Length",
+			"Content-Type",
+			"Authorization",
+			"X-API-Key",
+			"Accept",
+			"X-Requested-With",
+		},
+		ExposeHeaders: []string{
+			"Content-Length",
+		},
 		AllowCredentials: true,
-		//AllowOriginFunc: func(origin string) bool {
-		//	return origin == "https://github.com"
-		//},
-		MaxAge: 12 * time.Hour,
+		MaxAge:           12 * time.Hour,
 	})
 }
