@@ -13,4 +13,3 @@ updates:
       interval: "weekly"  # You can change to 'daily', 'weekly', or 'monthly'
     labels:
       - "dependencies"
-      - "yarn"
