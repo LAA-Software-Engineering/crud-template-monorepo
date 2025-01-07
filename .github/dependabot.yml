@@ -10,6 +10,6 @@ updates:
   - package-ecosystem: "npm"  # 'npm' works for both npm and Yarn projects
     directory: "/frontend"  # Path to where your `package.json` and `yarn.lock` are located
     schedule:
-      interval: "weekly"  # You can change to 'daily', 'weekly', or 'monthly'
+      interval: "weekly"
     labels:
       - "dependencies"
