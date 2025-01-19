@@ -1,8 +1,7 @@
 // src/App.tsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { ThemeProvider, CssBaseline } from '@mui/material';
-import { theme } from './theme';
+import { CssBaseline } from '@mui/material';
 import { LoginPage } from './pages/LoginPage';
 import { RegisterPage } from './pages/RegisterPage';
 import { BooksPage } from './pages/BooksPage';
@@ -12,7 +11,7 @@ import { MainLayout } from './components/layout/MainLayout';
 
 const App: React.FC = () => {
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <CssBaseline />
       <Router>
         <Routes>
@@ -45,7 +44,7 @@ const App: React.FC = () => {
           <Route path="/" element={<Navigate to="/books" replace />} />
         </Routes>
       </Router>
-    </ThemeProvider>
+    </>
   );
 };
 
