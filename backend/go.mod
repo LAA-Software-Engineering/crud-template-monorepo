@@ -1,6 +1,7 @@
 module crud-template-backend
 
-go 1.23
+go 1.23.0
+
 require (
 	github.com/araujo88/gin-gonic-xss-middleware v0.0.0-20221014023455-d89f16de6a7e
 	github.com/gin-contrib/cors v1.7.3
@@ -12,7 +13,7 @@ require (
 	github.com/stretchr/testify v1.10.0
 	github.com/swaggo/files v1.0.1
 	github.com/swaggo/gin-swagger v1.6.0
-	github.com/swaggo/swag v1.16.4
+	github.com/swaggo/swag v1.16.6
 	go.uber.org/zap v1.27.0
 	golang.org/x/crypto v0.33.0
 	golang.org/x/time v0.11.0
@@ -62,7 +63,8 @@ require (
 	github.com/ugorji/go/codec v1.2.12 // indirect
 	go.uber.org/multierr v1.10.0 // indirect
 	golang.org/x/arch v0.13.0 // indirect
-	golang.org/x/net v0.33.0 // indirect
+	golang.org/x/mod v0.22.0 // indirect
+	golang.org/x/net v0.34.0 // indirect
 	golang.org/x/sync v0.11.0 // indirect
 	golang.org/x/sys v0.30.0 // indirect
 	golang.org/x/text v0.22.0 // indirect
