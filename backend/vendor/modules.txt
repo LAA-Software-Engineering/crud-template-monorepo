@@ -218,8 +218,8 @@ github.com/stretchr/testify/assert/yaml
 # github.com/swaggo/files v1.0.1
 ## explicit; go 1.16
 github.com/swaggo/files
-# github.com/swaggo/gin-swagger v1.6.0
-## explicit; go 1.17
+# github.com/swaggo/gin-swagger v1.6.1
+## explicit; go 1.23.0
 github.com/swaggo/gin-swagger
 # github.com/swaggo/swag v1.16.6
 ## explicit; go 1.18
