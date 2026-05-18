@@ -15,7 +15,7 @@
     "@types/node": "^25.8.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "axios": "^1.16.0",
+    "axios": "^1.16.1",
     "date-fns": "^4.1.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.5",
