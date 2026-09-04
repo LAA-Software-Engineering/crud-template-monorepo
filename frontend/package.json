@@ -22,7 +22,7 @@
     "react-hook-form": "^7.80.0",
     "react-router-dom": "^7.18.2",
     "react-scripts": "5.0.1",
-    "typescript": "^5.9.3",
+    "typescript": "^7.0.2",
     "web-vitals": "3.5.2",
     "yarn": "^1.22.22"
   },
