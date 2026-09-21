@@ -403,7 +403,7 @@ google.golang.org/protobuf/runtime/protoiface
 # gopkg.in/yaml.v3 v3.0.1
 ## explicit
 gopkg.in/yaml.v3
-# gorm.io/driver/postgres v1.6.2
+# gorm.io/driver/postgres v1.6.3
 ## explicit; go 1.25.0
 gorm.io/driver/postgres
 # gorm.io/gorm v1.31.2
